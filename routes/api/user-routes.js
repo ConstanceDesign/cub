@@ -1,16 +1,33 @@
 const router = require("express").Router();
 const { User } = require("../../models");
 
+router.get("/", (req, res) => {
+  User.findAll({
+    attributes: { exclude: ["password"] },
+  })
+    .then((dbUserData) => res.json(dbUserData))
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
 router.get("/:id", (req, res) => {
   User.findOne({
     attributes: { exclude: ["password"] },
     where: {
       id: req.params.id,
     },
+    include: [
+      {
+        model: Post,
+        attributes: ["id", "title", "post_url", "created_at"],
+      },
+    ],
   })
     .then((dbUserData) => {
       if (!dbUserData) {
-        res.status(404).json({ message: "No parents found with this id" });
+        res.status(404).json({ message: "No parent found with this id" });
         return;
       }
       res.json(dbUserData);
@@ -41,11 +58,12 @@ router.post("/login", (req, res) => {
     },
   }).then((dbUserData) => {
     if (!dbUserData) {
-      res.status(400).json({ message: "No parents with that email address!" });
+      res.status(400).json({ message: "No parent with that email address!" });
       return;
     }
 
     const validPassword = dbUserData.checkPassword(req.body.password);
+
     if (!validPassword) {
       res.status(400).json({ message: "Incorrect password!" });
       return;
@@ -64,7 +82,7 @@ router.put("/:id", (req, res) => {
   })
     .then((dbUserData) => {
       if (!dbUserData[0]) {
-        res.status(404).json({ message: "No parents found with this id" });
+        res.status(404).json({ message: "No parent found with this id" });
         return;
       }
       res.json(dbUserData);
@@ -83,7 +101,7 @@ router.delete("/:id", (req, res) => {
   })
     .then((dbUserData) => {
       if (!dbUserData) {
-        res.status(404).json({ message: "No parents found with this id" });
+        res.status(404).json({ message: "No parent found with this id" });
         return;
       }
       res.json(dbUserData);
