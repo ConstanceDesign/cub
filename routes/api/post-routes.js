@@ -1,5 +1,6 @@
 const router = require("express").Router();
-const { Post, User } = require("../../models");
+const { Post, User, Approval } = require("../../models");
+const sequelize = require("../../config/connection");
 
 router.get("/", (req, res) => {
   Post.findAll({
@@ -45,21 +46,19 @@ router.get("/:id", (req, res) => {
     });
 });
 
-router.post("/", (req, res) => {
-  // expects {title: 'Taskmaster goes public!', post_url: 'https://taskmaster.com/press', user_id: 1}
-  Post.create({
-    title: req.body.title,
-    post_url: req.body.post_url,
-    user_id: req.body.user_id,
+router
+  .post("/", (req, res) => {
+    title: req.body.title, post_url;
+    req.body.post_url, user_id;
+    req.body.user_id;
   })
-    .then((dbPostData) => res.json(dbPostData))
-    .catch((err) => {
-      console.log(err);
-      res.status(500).json(err);
-    });
-});
+  .then((dbPostData) => res.json(dbPostData))
+  .catch((err) => {
+    console.log(err);
+    res.status(500).json(err);
+  });
 
-router.put("/:id", (req, res) => {
+router.put("/upvote", "/:id", (req, res) => {
   Post.update(
     {
       title: req.body.title,
@@ -81,27 +80,54 @@ router.put("/:id", (req, res) => {
       console.log(err);
       res.status(500).json(err);
     });
-});
 
-router.delete("/:id", (req, res) => {
-  Post.destroy({
-    where: {
-      id: req.params.id,
-    },
-  })
-    .then((dbPostData) => {
-      if (!dbPostData) {
-        res.status(404).json({ message: "No post found with this id" });
-        return;
-      }
-      res.json(dbPostData);
+  Approval.create({
+    user_id: req.body.user_id,
+    post_id: req.body.post_id,
+  }).then(() => {
+    // then find the post we just voted on
+    return Post.findOne({
+      where: {
+        id: req.body.post_id,
+      },
+      attributes: [
+        "id",
+        "post_url",
+        "title",
+        "created_at",
+        [
+          sequelize.literal(
+            "(SELECT COUNT(*) FROM approval WHERE post.id = approval.post_id)"
+          ),
+          "vote_count",
+        ],
+      ],
     })
-    .catch((err) => {
-      console.log(err);
-      res.status(500).json(err);
-    });
-});
+      .then((dbPostData) => res.json(dbPostData))
+      .catch((err) => {
+        console.log(err);
+        res.status(400).json(err);
+      });
+  });
 
-module.exports = router;
+  router.delete("/:id", (req, res) => {
+    Post.destroy({
+      where: {
+        id: req.params.id,
+      },
+    })
+      .then((dbPostData) => {
+        if (!dbPostData) {
+          res.status(404).json({ message: "No post found with this id" });
+          return;
+        }
+        res.json(dbPostData);
+      })
+      .catch((err) => {
+        console.log(err);
+        res.status(500).json(err);
+      });
+  });
+});
 
 module.exports = router;
