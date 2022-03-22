@@ -21,7 +21,7 @@ router.get("/:id", (req, res) => {
   })
     .then((dbUserData) => {
       if (!dbUserData) {
-        res.status(404).json({ message: "No user found with this id" });
+        res.status(404).json({ message: "No parents found with this id" });
         return;
       }
       res.json(dbUserData);
@@ -45,6 +45,21 @@ router.post("/", (req, res) => {
     });
 });
 
+router.post("/login", (req, res) => {
+  User.findOne({
+    where: {
+      email: req.body.email,
+    },
+  }).then((dbUserData) => {
+    if (!dbUserData) {
+      res.status(400).json({ message: "No parents with that email address!" });
+      return;
+    }
+
+    res.json({ user: dbUserData });
+  });
+});
+
 router.put("/:id", (req, res) => {
   User.update(req.body, {
     individualHooks: true,
@@ -54,7 +69,7 @@ router.put("/:id", (req, res) => {
   })
     .then((dbUserData) => {
       if (!dbUserData[0]) {
-        res.status(404).json({ message: "No user found with this id" });
+        res.status(404).json({ message: "No parents found with this id" });
         return;
       }
       res.json(dbUserData);
@@ -73,7 +88,7 @@ router.delete("/:id", (req, res) => {
   })
     .then((dbUserData) => {
       if (!dbUserData) {
-        res.status(404).json({ message: "No user found with this id" });
+        res.status(404).json({ message: "No parents found with this id" });
         return;
       }
       res.json(dbUserData);
