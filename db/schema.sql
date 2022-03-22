@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS cub_db;
+
+CREATE DATABASE cub_db;
