@@ -41,7 +41,7 @@ router.get("/:id", (req, res) => {
   })
     .then((dbUserData) => {
       if (!dbUserData) {
-        res.status(404).json({ message: "No parent found with this id" });
+        res.status(404).json({ message: "No kin found with this id" });
         return;
       }
       res.json(dbUserData);
@@ -72,7 +72,7 @@ router.post("/login", (req, res) => {
     },
   }).then((dbUserData) => {
     if (!dbUserData) {
-      res.status(400).json({ message: "No parent with that email address!" });
+      res.status(400).json({ message: "No kin with that email address!" });
       return;
     }
 
@@ -96,7 +96,7 @@ router.put("/:id", (req, res) => {
   })
     .then((dbUserData) => {
       if (!dbUserData[0]) {
-        res.status(404).json({ message: "No parent found with this id" });
+        res.status(404).json({ message: "No kin found with this id" });
         return;
       }
       res.json(dbUserData);
@@ -115,7 +115,7 @@ router.delete("/:id", (req, res) => {
   })
     .then((dbUserData) => {
       if (!dbUserData) {
-        res.status(404).json({ message: "No parent found with this id" });
+        res.status(404).json({ message: "No kin found with this id" });
         return;
       }
       res.json(dbUserData);
