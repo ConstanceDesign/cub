@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const sequelize = require("../../config/connection");
 const { Post, User, Comment, Approval } = require("../../models");
+const withAuth = require("../../utils/auth");
 
 router.get("/", (req, res) => {
   console.log("======================");
@@ -12,9 +13,9 @@ router.get("/", (req, res) => {
       "created_at",
       [
         sequelize.literal(
-          "(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)"
+          "(SELECT COUNT(*) FROM approval WHERE approval.id = approval.post_id)"
         ),
-        "vote_count",
+        "approval_count",
       ],
     ],
     order: [["created_at", "DESC"]],
@@ -52,9 +53,9 @@ router.get("/:id", (req, res) => {
       "created_at",
       [
         sequelize.literal(
-          "(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)"
+          "(SELECT COUNT(*) FROM approval WHERE post.id = approval.post_id)"
         ),
-        "vote_count",
+        "approval_count",
       ],
     ],
     include: [
