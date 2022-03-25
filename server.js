@@ -18,9 +18,9 @@ const sess = {
   resave: false,
   proxy: true,
   saveUninitialized: true,
-  store: new SequelizeStore({
-    db: sequelize,
-  }),
+  // store: new SequelizeStore({
+  //   db: sequelize,
+  // }),
 };
 
 app.use(session(sess));
