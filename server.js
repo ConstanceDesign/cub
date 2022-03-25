@@ -25,7 +25,7 @@ const sess = {
 
 app.use(session(sess));
 
-let sequelize;
+// let sequelize;
 if (config.use_env_variable) {
   sequelize = new Sequelize(process.env[config.use_env_variable]);
 } else {
