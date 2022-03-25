@@ -13,50 +13,18 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 const sess = {
-  secret: "Super secret secret",
+  secret: "super secret",
   cookie: {},
   resave: false,
-  proxy: true,
   saveUninitialized: true,
-  // store: new SequelizeStore({
-  //   db: sequelize,
-  // }),
+  store: new SequelizeStore({
+    db: sequelize,
+  }),
 };
 
 app.use(session(sess));
 
-// let sequelize;
-if (config.use_env_variable) {
-  sequelize = new Sequelize(process.env[config.use_env_variable]);
-} else {
-  sequelize = new Sequelize(
-    config.database,
-    config.username,
-    config.password,
-    config
-  );
-}
-
-fs.readdirSync(__dirname)
-  .filter(
-    (file) =>
-      file.indexOf(".") !== 0 && file !== basename && file.slice(-3) === ".js"
-  )
-  .forEach((file) => {
-    const model = sequelize.import(path.join(__dirname, file));
-    db[model.name] = model;
-  });
-
-Object.keys(db).forEach((modelName) => {
-  if (db[modelName].associate) {
-    db[modelName].associate(db);
-  }
-});
-
-db.sequelize = sequelize;
-db.Sequelize = Sequelize;
-
-const helpers = require("./utils/helpers");
+const helpers = require("./__tests__/helpers");
 
 app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
