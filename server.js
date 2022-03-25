@@ -7,7 +7,7 @@ const sequelize = require("sequelize");
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
 const basename = path.basename(module.filename);
 const env = process.env.NODE_ENV || "development";
-const config = require("../config/config.json")[env];
+const config = require("config.json")[env];
 const db = {};
 
 const app = express();
