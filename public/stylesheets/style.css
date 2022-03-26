@@ -136,12 +136,12 @@ main {
   margin: -1.5% 0 2% 0;
 }
 
-.upvote-btn {
+.approval-btn {
   background-color: #197d0f;
   transition: background-color 0.1s;
 }
 
-.upvote-btn:hover {
+.approval-btn:hover {
   background-color: #1f9c13;
 }
 
