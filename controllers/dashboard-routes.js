@@ -18,7 +18,7 @@ router.get("/", withAuth, (req, res) => {
       "created_at",
       [
         sequelize.literal(
-          "(SELECT COUNT(*) FROM vote WHERE post.id = approval.post_id)"
+          "(SELECT COUNT(*) FROM approval WHERE post.id = approval.post_id)"
         ),
         "approval_count",
       ],
@@ -57,7 +57,7 @@ router.get("/edit/:id", withAuth, (req, res) => {
       "created_at",
       [
         sequelize.literal(
-          "(SELECT COUNT(*) FROM vote WHERE post.id = approval.post_id)"
+          "(SELECT COUNT(*) FROM approval WHERE post.id = approval.post_id)"
         ),
         "approval_count",
       ],

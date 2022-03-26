@@ -3,13 +3,6 @@ const Post = require("./Post");
 const User = require("./User");
 const Approval = require("./Approval");
 const Comment = require("./Comment");
-const fs = require("fs");
-const path = require("path");
-const Sequelize = require("sequelize");
-const SequelizeStore = require("connect-session-sequelize")(session.Store);
-const basename = path.basename(module.filename);
-const env = process.env.NODE_ENV || "development";
-const db = {};
 
 // create associations
 User.hasMany(Post, {
@@ -65,7 +58,3 @@ Post.hasMany(Comment, {
 });
 
 module.exports = { User, Post, Approval, Comment };
-
-db.sequelize = sequelize;
-
-module.exports = db;
