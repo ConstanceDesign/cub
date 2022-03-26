@@ -2,24 +2,37 @@
   box-sizing: border-box;
 }
 
+:root {
+  --peach: #c06f64;
+  --baby-blue: #cdd5dd;
+  --blue: #637990;
+  --dark-blue: #3e516d;
+  --mint: #b6d9d0;
+  --cream: --#fdf4e2;
+  --brown: --#a26044;
+  --orange: --#bb5232;
+  --black: --#000;
+  --white: --#fff;
+}
+
 body,
 html {
   height: 100%;
   padding: 0;
   margin: 0;
   font-family: sans-serif;
-  color: #333;
+  color: var(--black);
 }
 
 a {
   text-decoration: none;
-  color: #225ca3;
+  color: var(--dark-blue);
   font-weight: bold;
   transition: color 0.1s;
 }
 
 a:hover {
-  color: #3486eb;
+  color: var(--blue);
 }
 
 button {
@@ -34,7 +47,7 @@ button {
 }
 
 button:hover {
-  background-color: #3486eb;
+  background-color: var(--blue);
 }
 
 .post-list {
