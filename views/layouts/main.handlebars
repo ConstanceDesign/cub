@@ -11,7 +11,7 @@
     <div class="wrapper">
       <header>
         <h1>
-          <a href="/">Just Tech News</a>
+          <a href="/">Cub Kin</a>
         </h1>
         <nav>
           {{#if loggedIn}}
@@ -26,10 +26,13 @@
         {{{body}}}
       </main>
       <footer>
-        CubKin 2022
+        <h6>Cub Kin ©</h6><span id="copyright-year">2022</span>
       </footer>
     </div>
-
+    <script>
+      document.querySelector('#copyright-year').innerText = new
+      Date().getFullYear();
+    </script>
     {{#if loggedIn}}
       <script src="/javascript/logout.js"></script>
     {{/if}}
