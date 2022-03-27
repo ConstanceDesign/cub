@@ -26,6 +26,16 @@ async function commentFormHandler(event) {
       alert(response.statusText);
     }
   }
+
+  let approval = true;
+
+  console.log("Default value of bool is", approval);
+
+  function toggle() {
+    approval = !approval;
+
+    console.log("Toggled bool approved", approval);
+  }
 }
 
 document
