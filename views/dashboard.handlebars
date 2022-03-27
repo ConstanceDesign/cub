@@ -1,5 +1,5 @@
 <section>
-  <h2>Create New Post</h2>
+  <h2>Create a New Message</h2>
 
   <form class="new-post-form">
     <div>
@@ -7,8 +7,8 @@
       <input type="text" id="post-title" name="post-title" />
     </div>
     <div>
-       <label for="category">Category</label>
-        <select id="category" name="category">
+       <label for="post-category">post-category</label>
+        <select id="post-category" name="post-category">
         <option value="Medical">Medical</option>
         <option value="Education">Education</option>
         <option value="Schedule">Schedule</option>
@@ -17,7 +17,11 @@
         <option value="Drop-offs/Pick-ups">Drop-offs/Pick-up</option>
         <option value="Expenses">Expenses</option>
 </select>
-    </div>
+    </div><div>
+    <label for="post-message">Message</label>
+    <textarea name="message" rows="" cols="1">
+</textarea>
+</div>
     <button type="submit" class="btn">Create</button>
   </form>
 </section>
