@@ -99,8 +99,8 @@ router.post("/", (req, res) => {
     });
 });
 
-router.put("/approval", (req, res) => {
-  Post.approval(req.body, { Approval, Comment, User })
+router.put("/upvote", (req, res) => {
+  Post.upvote(req.body, { Approval, Comment, User })
     .then((updatedApprovalData) => res.json(updatedApprovalData))
     .catch((err) => {
       console.log(err);
