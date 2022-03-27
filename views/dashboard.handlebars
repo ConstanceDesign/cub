@@ -18,29 +18,6 @@
         <option value="Expenses">Expenses</option>
 </select>
     </div>
-    <div></div>
-    {{> post-info post}}
-
-{{#if loggedIn}}
-<form class="comment-form">
-  <div>
-    <textarea name="comment-body"></textarea>
-  </div>
-
-  <div>
-    <button type="submit">add comment</button>
-    <button type="button" class="approval-btn">approval</button>
-  </div>
-</form>
-{{/if}}
-
-{{> comments post.comments}}
-
-{{#if loggedIn}}
-<script src="/javascript/comment.js"></script>
-<script src="/javascript/approval.js"></script>
-{{/if}}
-</div>
     <button type="submit" class="btn">Create</button>
   </form>
 </section>
