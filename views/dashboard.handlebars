@@ -3,8 +3,8 @@
 
   <form class="new-post-form">
     <div>
-      <label for="post-title">Topic</label>
-      <input type="text" id="post-title" name="post-title" />
+      <label for="category">Topic</label>
+      <input type="text" id="category" name="category" />
     </div>
     <div>
       <label for="post-url">Category</label>
@@ -17,8 +17,30 @@
         <option value="Drop-offs/Pick-ups">Drop-offs/Pick-up</option>
         <option value="Expenses">Expenses</option>
 </select>
-
     </div>
+    <div></div>
+    {{> post-info post}}
+
+{{#if loggedIn}}
+<form class="comment-form">
+  <div>
+    <textarea name="comment-body"></textarea>
+  </div>
+
+  <div>
+    <button type="submit">add comment</button>
+    <button type="button" class="approval-btn">approval</button>
+  </div>
+</form>
+{{/if}}
+
+{{> comments post.comments}}
+
+{{#if loggedIn}}
+<script src="/javascript/comment.js"></script>
+<script src="/javascript/approval.js"></script>
+{{/if}}
+</div>
     <button type="submit" class="btn">Create</button>
   </form>
 </section>
