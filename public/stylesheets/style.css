@@ -26,12 +26,12 @@ html {
 
 h1 {
   font-family: "Bungee", cursive;
-  font-size: clamp(3.5rem, 12vw, 7.5rem);
+  font-size: clamp(5rem, 12vw, 9rem);
 }
 
 h2 {
   font-family: "Sniglet", cursive;
-  font-size: clamp(3.5rem, 12vw, 7.5rem);
+  font-size: clamp(5rem, 12vw, 9rem);
 }
 
 a {
