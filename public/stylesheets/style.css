@@ -24,6 +24,16 @@ html {
   color: var(--black);
 }
 
+h1 {
+  font-family: "Bungee", cursive;
+  font-size: clamp(3.5rem, 12vw, 7.5rem);
+}
+
+h1 {
+  font-family: "Sniglet", cursive;
+  font-size: clamp(3.5rem, 12vw, 7.5rem);
+}
+
 a {
   text-decoration: none;
   color: var(--dark-blue);
