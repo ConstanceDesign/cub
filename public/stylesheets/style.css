@@ -1,5 +1,10 @@
+/* Remove Browser Default Styling */
+/* the * acts as a select all*/
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
 }
 
 :root {
@@ -22,16 +27,25 @@ html {
   margin: 0;
   font-family: "Titillium Web", sans-serif;
   color: var(--black);
+  background-color: #7497aa;
 }
 
 h1 {
   font-family: "Bungee", cursive;
   font-size: clamp(5rem, 12vw, 9rem);
+  color: var(--cream);
 }
 
 h2 {
   font-family: "Sniglet", cursive;
   font-size: clamp(5rem, 12vw, 9rem);
+  color: var(--cream);
+}
+
+h6 {
+  font-family: "Sniglet", cursive;
+  font-size: clamp(3rem, 6vw, 7rem);
+  color: var(--cream);
 }
 
 a {
