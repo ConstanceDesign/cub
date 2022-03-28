@@ -41,8 +41,7 @@
         <a href="/" class="logo"><img
             src="./images/cubkin.svg"
             alt="Cub Kin Logo"
-            {{! height="100" }}
-            width="200"
+            width="250"
           />
         </a>
         <h1>
@@ -50,9 +49,10 @@
         <nav>
           {{#if loggedIn}}
             <a href="/dashboard">dashboard</a>
-            <button id="logout" class="btn-no-style">logout</button>
+            <button id="logout" class="btn-no-style">Log Out</button>
           {{else}}
-            <a href="/login">login</a>
+            <a href="/api/index">Log In</a>
+            <a href="/api/index">Sign Up</a>
           {{/if}}
         </nav>
       </header>
@@ -63,10 +63,6 @@
         <h6>© <span id="copyright-year">2022</span> Cub Kin</h6>
       </footer>
     </div>
-    <script>
-      document.querySelector('#copyright-year').innerText = new
-      Date().getFullYear();
-    </script>
     {{#if loggedIn}}
       <script src="/javascript/logout.js"></script>
     {{/if}}

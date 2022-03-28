@@ -51,6 +51,8 @@ app.use(require("./controllers/"));
 //   });
 // });
 
-sequelize.sync({ force: false }).then(() => {
+document.querySelector("#copyright-year").innerText = new sequelize.sync({
+  force: false,
+}).then(() => {
   app.listen(PORT, () => console.log(`Now listening ${PORT}!`));
 });
