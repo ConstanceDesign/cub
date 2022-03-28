@@ -4,13 +4,34 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cub Kin</title>
+
+    <!-- CSS -->
     <link rel="stylesheet" href="/stylesheets/style.css" />
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Bungee&family=Itim&family=Sniglet&family=Titillium+Web:ital,wght@0,400;0,700;1,400;1,700&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Font Awesome (icons) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <!--Bootstrap CSS-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="Favicon.ico" />
 
   </head>
 
@@ -20,6 +41,14 @@
         <h1>
           <a href="/">Cub Kin</a>
         </h1>
+        <img src="{{this.src}}" />
+        <a href="index.js" class="logo"><img
+            src="./images/cubkin.svg"
+            alt="Cub Kin Logo"
+            height="90"
+            width="150"
+          />
+        </a>
         <nav>
           {{#if loggedIn}}
             <a href="/dashboard">dashboard</a>
