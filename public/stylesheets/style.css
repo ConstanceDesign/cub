@@ -20,7 +20,7 @@ html {
   height: 100%;
   padding: 0;
   margin: 0;
-  font-family: sans-serif;
+  font-family: "Titillium Web", sans-serif;
   color: var(--black);
 }
 
@@ -44,6 +44,7 @@ button {
   transition: background-color 0.1s;
   cursor: pointer;
   border-radius: 5px;
+  font-family: "Bungee", cursive;
 }
 
 button:hover {
@@ -53,6 +54,7 @@ button:hover {
 .post-list {
   margin: 0;
   padding: 0;
+  font-family: "Titillium Web", sans-serif;
 }
 
 textarea,
@@ -152,6 +154,7 @@ main {
 .approval-btn {
   background-color: #197d0f;
   transition: background-color 0.1s;
+  font-family: "Bungee", cursive;
 }
 
 .approval-btn:hover {
@@ -165,6 +168,7 @@ main {
 .comment {
   padding: 1%;
   margin-bottom: 1%;
+  font-family: "Titillium Web", sans-serif;
 }
 
 .comment:nth-child(odd) {
@@ -173,6 +177,7 @@ main {
 
 .comment .meta {
   font-size: 90%;
+  font-family: "Titillium Web", sans-serif;
   margin-bottom: 0.5%;
   opacity: 0.6;
 }
@@ -191,4 +196,5 @@ footer {
   justify-content: center;
   padding: 1%;
   font-size: 110%;
+  font-family: "Titillium Web", sans-serif;
 }
