@@ -32,13 +32,13 @@ html {
 
 h1 {
   font-family: "Bungee", cursive;
-  font-size: clamp(5rem, 12vw, 9rem);
+  font-size: 30pt;
   color: var(--cream);
 }
 
 h2 {
   font-family: "Sniglet", cursive;
-  font-size: clamp(5rem, 12vw, 9rem);
+  font-size: 30pt;
   color: var(--cream);
 }
 
