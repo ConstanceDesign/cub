@@ -5,6 +5,7 @@
   padding: 0;
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
+  text-decoration: none;
 }
 
 :root {
@@ -30,21 +31,64 @@ html {
   background-color: #7497aa;
 }
 
-h1 {
-  font-family: "Bungee", cursive;
-  font-size: 30pt;
+.header {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.row {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 140px;
+}
+
+.logo {
+  margin-top: 10px;
+  z-index: 4;
+}
+
+.logotext {
+  text-decoration: none;
+}
+
+.tagline {
+  font-family: "Itim", cursive;
   color: var(--cream);
 }
 
-h2 {
-  font-family: "Sniglet", cursive;
-  font-size: 30pt;
+#cub {
+  font-family: "Bungee", cursive;
   color: var(--cream);
+  font-size: 75px;
+}
+
+#kin {
+  font-family: "Sniglet", cursive;
+  font-size: 53pt;
+  color: var(--cream);
+  /* text-decoration: none; */
+}
+
+#cub2 {
+  font-family: "Bungee", cursive;
+  color: var(--cream);
+  font-size: 15px;
+}
+
+#kin2 {
+  font-family: "Sniglet", cursive;
+  font-weight: bold;
+  font-size: 12pt;
+  color: var(--cream);
+  /* text-decoration: none; */
 }
 
 h6 {
-  font-family: "Sniglet", cursive;
-  font-size: clamp(3rem, 6vw, 7rem);
+  font-family: "Itim", cursive;
+  font-weight: bold;
+  font-size: 15pt;
   color: var(--cream);
 }
 
@@ -63,7 +107,7 @@ button {
   background-color: #225ca3;
   border: 0;
   padding: 1%;
-  color: white;
+  color: var(--dark-blue);
   font-weight: bold;
   transition: background-color 0.1s;
   cursor: pointer;
@@ -221,4 +265,71 @@ footer {
   padding: 1%;
   font-size: 110%;
   font-family: "Titillium Web", sans-serif;
+}
+
+/* Arcan */
+.homebutton {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.header {
+  background-color: black;
+}
+
+.menu-nav {
+  background-color: var(--bright-red);
+  height: 11vh;
+  color: var(--brown);
+  padding-left: 20px;
+  padding-top: 0px;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: var(--lime);
+  font-family: "Zilla Slab", serif;
+  font-size: clamp(0.75rem, 4vw, 1.5rem);
+  font-weight: bold;
+  text-decoration: none;
+  overflow-x: hidden;
+  transition: 600ms;
+  transition-timing-function: ease-in-out;
+  padding-top: 60px;
+  z-index: 1000;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  color: var(--brown);
+  display: block;
+  transition: 600ms;
+  transition-timing-function: ease-in-out;
+}
+
+.sidenav a:hover {
+  color: var(--cherry-red);
+  text-decoration: none;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 45px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 18px;
+  }
 }

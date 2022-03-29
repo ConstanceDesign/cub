@@ -31,44 +31,101 @@
     />
 
     <!--Favicon-->
-    <link rel="shortcut icon" href="Favicon.ico" />
+    <link rel="shortcut icon" href="/public/Favicon.ico" />
 
   </head>
 
   <body>
-    <div class="wrapper">
-      <header class="col-md-6">
+
+      <!-- Header -->
+    <header class="header">
+    <div class="row" style="background-image: url('./images/header.jpg')">
+    <div class="col" >
         <a href="/" class="logo"><img
             src="./images/cubkin.svg"
             alt="Cub Kin Logo"
             width="250"
           />
         </a>
-        <h1>
-          <a href="/">Cub</a></h1><h2><a href="/">Kin</a></h2>
-        <nav>
-          {{#if loggedIn}}
-            <a href="/dashboard">Create Message</a>
-            <a href="/dashboard">View Message</a>
-            <a href="/dashboard">Calendar</a>
-            <a href="/dashboard">Add Kin</a>
-            <button id="logout" class="btn-no-style">Log Out</button>
+        </div>
+          <div class="logotext col-9">
+    {{!-- <a href="/"> --}}
+        <span id="cub">Cub</span>
+        <span id="kin">kin</span>
+    {{!-- </a> --}}
+</div>
+        <div class="col">
+          <h3 class="tagline col-5">for Co-Parenting</h>
+          </div></div></div>
+
+        </header>
+
+      <!-- Navigation --> 
+      <nav id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onload="closeNav()" onclick="closeNav()">&times;</a>
+        {{#if loggedIn}}
+        <hr>
+        <ul>
+          <a href="#" class="active">
+              <span class="item">Home</span>
+          </a>
+      </ul>
+      <hr>
+      <ul>
+          <a href="/dashboard">
+              <span class="item">Communication</span>
+          </a>
+      </ul>
+      <hr>
+      <ul>
+          <a href="/dashboard">
+              <span class="item">Calendar</span>
+          </a>
+      </ul>
+      <hr>
+      <ul>
+          <a href="/dashboard">
+              <span class="item">Children</span>
+          </a>
+      </ul>
+      <hr>
+      <ul>
+          <a href="/dashboard">
+              <span class="item">Kin</span>
+          </a>
+      </ul>
+      <hr>
+            <ul>
+          <a href="/dashboard">
+              <span class="item">Co-Parenting Tips</span>
+          </a>
+      </ul>
+      <hr>
+      <ul>
+          <button id="logout" class="btn-no-style">Log Out</button>
+          </a>
+      </ul>
+      <hr>
+     </ul>
           {{else}}
             <a href="/api/index">Log In</a>
             <a href="/api/index">Sign Up</a>
           {{/if}}
-        </nav>
-      </header>
+    </nav>
+
+
       <main>
         {{{body}}}
       </main>
       <footer>
-        <h6>© <span id="copyright-year">2022</span> Cub Kin</h6>
+        <h6>© <span id="copyright-year">2022</span>&nbsp;<span id="cub2">Cub</span>
+        <span id="kin2">kin</span></h6>
       </footer>
     </div>
     {{#if loggedIn}}
       <script src="/javascript/logout.js"></script>
     {{/if}}
+     <script src="server.js"></script>
   </body>
 
 </html>

@@ -27,6 +27,7 @@
     "express-session": "^1.17.2",
     "jest": "^27.5.1",
     "mysql2": "^2.3.3",
-    "sequelize": "^6.17.0"
+    "sequelize": "^6.17.0",
+    "tui-calendar": "^1.15.3"
   }
 }
