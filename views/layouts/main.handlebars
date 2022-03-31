@@ -63,7 +63,7 @@
       <!-- Navigation --> 
       <nav id="mySidenav" class="sidenav">
         <a href="#" class="closebtn" onload="closeNav()" onclick="closeNav()">&times;</a>
-        {{#if loggedIn}}
+        {{!-- {{#if loggedIn}} --}}
         <hr>
         <ul>
           <a href="#" class="active">
@@ -107,10 +107,10 @@
       </ul>
       <hr>
      </ul>
-          {{else}}
+          {{!-- {{else}} --}}
             <a href="/api/index">Log In</a>
             <a href="/api/index">Sign Up</a>
-          {{/if}}
+          {{!-- {{/if}} --}}
     </nav>
 
 
@@ -122,9 +122,9 @@
         <span id="kin2">kin</span></h6>
       </footer>
     </div>
-    {{#if loggedIn}}
+    {{!-- {{#if loggedIn}} --}}
       <script src="/javascript/logout.js"></script>
-    {{/if}}
+    {{!-- {{/if}} --}}
      <script src="server.js"></script>
   </body>
 

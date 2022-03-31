@@ -61,8 +61,8 @@ function myFunction() {
   }
 }
 
-document.querySelector("#copyright-year").innerText = new sequelize.sync({
-  force: false,
-}).then(() => {
-  app.listen(PORT, () => console.log(`Now listening ${PORT}!`));
-});
+// document.querySelector("#copyright-year").innerText = new sequelize.sync({
+//   force: false,
+// }).then(() => {
+app.listen(PORT, () => console.log(`Now listening ${PORT}!`));
+// });

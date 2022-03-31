@@ -35,9 +35,9 @@ router.get("/", (req, res) => {
     .then((dbPostData) => {
       const posts = dbPostData.map((post) => post.get({ plain: true }));
 
-      res.render("homepage", {
+      res.render("login", {
         posts,
-        loggedIn: req.session.loggedIn,
+        // loggedIn: req.session.loggedIn,
       });
     })
     .catch((err) => {
