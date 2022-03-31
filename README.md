@@ -46,7 +46,8 @@ To run tests, be sure all NPM packages are installed, open Terminal, and run npm
 
 ## Visuals
 
-Coming soon!
+<img width="1099" alt="Screen Shot 2022-03-31 at 6 23 57 PM" src="https://user-images.githubusercontent.com/93297081/161159626-57f6f819-4af0-4cea-a047-6b5c9b9ffda5.png">
+
 
 ## GitHub Link
 
